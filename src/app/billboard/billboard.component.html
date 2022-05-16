@@ -1,0 +1,25 @@
+<div class="container">
+  <h1 class="heading"><strong>Services </strong>Demo</h1>
+
+  <button type="button" (click)="getArtists()">Get Top 5 Billboard</button>
+
+  <div class='table-responsive'>
+    <table class='table'>
+      <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Penyanyi</th>
+        <th>Lagu</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let product of billboardData;">
+        <td>{{product.rank}}</td>
+        <td>{{product.singer}}</td>
+        <td>{{product.song}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+</div>
