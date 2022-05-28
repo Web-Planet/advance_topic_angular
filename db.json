@@ -1,0 +1,19 @@
+{
+  "employees": [
+    {
+      "id": 1,
+      "name": "Ahmad",
+      "address": "Jalan Sudirman"
+    },
+    {
+      "id": 2,
+      "name": "Sahroni",
+      "address": "Medan "
+    },
+    {
+      "id": 3,
+      "name": "Kisama",
+      "address": "Jepang"
+    }
+  ]
+}

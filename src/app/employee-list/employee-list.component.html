@@ -1,0 +1,38 @@
+<ng-container *ngIf="employees.length === 0; else listOfEmployee">
+  <h2>Tidak ditemukan data pegawai</h2>
+  <button routerLink="/create">Klik untuk tambah baru</button>
+</ng-container>
+
+<ng-template #listOfEmployee>
+  <div class="listContainer">
+    <h1 class="title">CRUD Pegawai PT Sukses bersama</h1> <br>
+    <table>
+      <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nama</th>
+        <th>Alamat</th>
+        <th>Aksi</th>
+      </tr>
+      </thead>
+
+      <tbody *ngFor="let employee of employees">
+      <tr>
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.address}}</td>
+        <td>
+          <button routerLink="/update/{{employee.id}}">Edit</button>
+          |
+          <button (click)="deleteEmployee(employee.id)">Hapus</button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+    <div *ngIf="employees.length !== 0">
+      <button routerLink="/create" [style.marginTop.px]="30">Tambah pegawai baru</button>
+    </div>
+  </div>
+</ng-template>
+
+

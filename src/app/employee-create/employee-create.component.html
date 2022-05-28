@@ -1,0 +1,10 @@
+<div class="container">
+  <h1 [style.marginBottom.px]="10">Tambah Pegawai Baru</h1>
+  <div>
+    <input type="text" placeholder="Nama" [(ngModel)]="employee.name">
+  </div>
+  <div>
+    <input type="text" placeholder="Alamat" [(ngModel)]="employee.address">
+  </div>
+  <button (click)="addNewEmployee(employee)">Tambah</button>
+</div>
