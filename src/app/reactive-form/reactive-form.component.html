@@ -1,1 +1,10 @@
-<p>reactive-form works!</p>
+<app-reactive-form
+  *ngIf="componentDisplay === 'FORM'"
+  (nextPage)="setComponentDisplayed('CONFIRMATION', $event)"
+></app-reactive-form>
+
+<app-reactive-confirmation
+  *ngIf="componentDisplay === 'CONFIRMATION'"
+  (backToForm)="setComponentDisplayed('FORM')"
+  [user]="user"
+></app-reactive-confirmation>

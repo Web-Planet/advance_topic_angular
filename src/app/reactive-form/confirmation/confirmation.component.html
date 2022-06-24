@@ -1,1 +1,52 @@
-<p>confirmation works!</p>
+<div class="container h-sm-100">
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-3">
+      Nama Lengkap
+    </div>
+    <div class="col">
+      {{this.user.fullName}}
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-3">
+      Alamat
+    </div>
+    <div class="col">
+      {{this.user.address}}
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-3">
+      Jenis Kelamin
+    </div>
+    <div class="col">
+      {{this.user.gender}}
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-3">
+      Email
+    </div>
+    <div class="col">
+      {{this.user.email}}
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-3">
+      Tanggal Lahir
+    </div>
+    <div class="col">
+      {{this.user.dob}}
+    </div>
+  </div>
+
+  <div class="row g-3">
+    <div class="col">
+      <button type="button" class="btn btn-primary btn-styling" (click)="backtoForm($event)">Kembali</button>
+    </div>
+  </div>
+</div>
