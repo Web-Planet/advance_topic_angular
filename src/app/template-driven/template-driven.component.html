@@ -1,0 +1,10 @@
+<app-form
+  *ngIf="componentDisplay === 'FORM'"
+  (nextPage)="setComponentDisplayed('CONFIRMATION', $event)"
+></app-form>
+
+<app-confirmation
+  *ngIf="componentDisplay === 'CONFIRMATION'"
+  (backToForm)="setComponentDisplayed('FORM')"
+  [books]="bookModel"
+></app-confirmation>

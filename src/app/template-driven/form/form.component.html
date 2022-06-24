@@ -1,0 +1,52 @@
+<form class="row g-3" #bookForm="ngForm" (ngSubmit)="onSubmitForm()">
+  <div class="col-md-6 form-group">
+    <label for="judulBuku" class="form-label">Judul Buku</label>
+    <input type="text" class="form-control" id="judulBuku" name="judulBuku" [(ngModel)]="bookModel.judulBuku">
+  </div>
+  <div class="col-md-6 form-group">
+    <label for="isbn" class="form-label">ISBN</label>
+    <input type="text" class="form-control" id="isbn" name="isbn" [(ngModel)]="bookModel.isbn">
+  </div>
+  <div class="col-12 form-group">
+    <label for="pengarang" class="form-label">Pengarang</label>
+    <input type="text" class="form-control" id="pengarang" name="pengarang" [(ngModel)]="bookModel.pengarang">
+  </div>
+  <div class="col-12 form-group">
+    <label for="email" class="form-label">Email Pengarang</label>
+    <input type="email" class="form-control" id="email" name="email" [ngModel]="bookModel.email">
+  </div>
+  <div class="col-md-4 form-group">
+    <label for="tahun" class="form-label">Tahun Diterbitkan</label>
+    <input type="number" class="form-control" id="tahunTerbit" name="tahunTerbit" [(ngModel)]="bookModel.tahunTerbit">
+  </div>
+  <div class="col-md-4 form-group">
+    <label for="tebalHalaman" class="form-label">Tebal Halaman</label>
+    <input type="number" class="form-control" id="tebalHalaman" name="tebalHalaman" [(ngModel)]="bookModel.tebalHalaman">
+  </div>
+  <div class="col-md-4 form-group">
+    <label for="hargaEceran" class="form-label">Harga Eceran</label>
+    <input type="number" class="form-control" id="hargaEceran" name="hargaEceran" [(ngModel)]="bookModel.hargaEceran">
+  </div>
+  <div class="col-12 form-group">
+    <label for="penerbit" class="form-label">Penerbit</label>
+    <input type="text" class="form-control" id="penerbit" name="penerbit" [(ngModel)]="bookModel.penerbit">
+  </div>
+  <div class="col-12 form-group">
+    <label for="alamatPenerbit" class="form-label">Alamat Penerbit</label>
+    <input type="text" class="form-control" id="alamatPenerbit" name="alamatPenerbit"
+           [(ngModel)]="bookModel.alamatPenerbit">
+  </div>
+
+  <div class="mt-4">
+    <ng-container *ngIf="isLoading; else submitBook">
+      <button class="btn btn-primary btn-styling" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
+    </ng-container>
+
+    <ng-template #submitBook>
+      <button type="submit" class="btn btn-primary btn-styling">Tambah Buku</button>
+    </ng-template>
+  </div>
+</form>
