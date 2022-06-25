@@ -37,7 +37,7 @@
            [(ngModel)]="bookModel.alamatPenerbit">
   </div>
 
-  <div class="mt-4">
+  <div class="mt-4 d-flex align-items-end flex-column">
     <ng-container *ngIf="isLoading; else submitBook">
       <button class="btn btn-primary btn-styling" type="button" disabled>
         <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
