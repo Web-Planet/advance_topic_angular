@@ -1,0 +1,10 @@
+<app-form-t
+  *ngIf="componentDisplay === 'FORM'"
+  (nextPage)="componentDisplayed('DETAIL', $event)"
+></app-form-t>
+
+<app-detail-t
+  *ngIf="componentDisplay ==='DETAIL'"
+  [userData]="userModel"
+  (backForm)="componentDisplayed('FORM')"
+></app-detail-t>

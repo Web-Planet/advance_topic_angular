@@ -1,0 +1,10 @@
+<app-form-r
+  *ngIf="componentDisplayed==='FORM'"
+  (nextPage)="setComponentDisplayed('DETAIL', $event)"
+></app-form-r>
+
+<app-detail-r
+  *ngIf="componentDisplayed==='DETAIL'"
+  (backPage)="setComponentDisplayed('FORM')"
+  [bookData]="bookModel"
+></app-detail-r>

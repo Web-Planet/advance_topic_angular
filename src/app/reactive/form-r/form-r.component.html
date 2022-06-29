@@ -1,0 +1,57 @@
+<form [formGroup]="bookForms" (ngSubmit)="onSubmit()">
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-6 form-group">
+      <label for="judul" class="form-label">Judul Buku</label>
+      <input type="text" id="judul" class="form-control" name="judul" formControlName="judul">
+    </div>
+
+    <div class="col-12 col-md-6 form-group">
+      <label for="isbn" class="form-label">ISBN</label>
+      <input type="text" id="isbn" class="form-control" name="isbn" formControlName="isbn">
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-md-4 form-group">
+      <label for="tebalHalaman" class="form-label">Tebal Halaman</label>
+      <input type="number" id="tebalHalaman" class="form-control" name="tebalHalaman" formControlName="tebalHalaman">
+    </div>
+
+    <div class="col-12 col-md-4 form-group">
+      <label for="tahunTerbit" class="form-label">Tahun Terbit</label>
+      <input type="number" id="tahunTerbit" class="form-control" name="tahunTerbit" formControlName="tahunTerbit">
+    </div>
+
+    <div class="col-12 col-md-4 form-group">
+      <label for="hargaEceran" class="form-label">Harga Eceran</label>
+      <input type="number" id="hargaEceran" class="form-control" name="hargaEceran" formControlName="hargaEceran">
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 form-group">
+      <label for="namaPengarang" class="form-label">Nama Pengarang</label>
+      <input type="text" id="namaPengarang" class="form-control" name="namaPengarang" formControlName="namaPengarang">
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <div class="col-12 form-group">
+      <label for="namaPenerbit" class="form-label">Nama Penerbit</label>
+      <input type="text" id="namaPenerbit" class="form-control" name="namaPenerbit" formControlName="namaPenerbit">
+    </div>
+  </div>
+
+  <div class="mt-5 d-flex align-items-end flex-column">
+    <ng-container *ngIf="isLoading; else showAddUser">
+      <button class="btn btn-primary btn-styling" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
+    </ng-container>
+
+    <ng-template #showAddUser>
+      <button type="submit" class="btn btn-primary btn-styling">Tambah Buku</button>
+    </ng-template>
+  </div>
+</form>

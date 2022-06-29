@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+
+.btn-styling {
+  width: auto;
+}
+
+.parent {
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child {
+  background-color: #F9F9F9;
+  width: 1000px;
+  min-height: 500px;
+  height: auto;
+  border-radius: 2%;
+  padding: 24px;
+}
+
+@media(max-width: 426px) {
+  .btn-styling {
+    width: 100%;
+  }
+}

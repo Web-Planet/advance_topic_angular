@@ -1,0 +1,51 @@
+<form class="row g-3" #userForm="ngForm" (ngSubmit)="onSubmitForm()">
+  <div class="col-12 mb-2 form-group">
+    <label for="fullName" class="form-label">Nama Lengkap</label>
+    <input type="text" id="fullName" class="form-control" name="fullName" [(ngModel)]="userModel.fullName">
+  </div>
+
+  <div class="col-12 mb-2 form-group">
+    <label for="address" class="form-label">Alamat</label>
+    <input type="text" id="address" class="form-control" name="address" [(ngModel)]="userModel.address">
+  </div>
+
+  <div class="col-12 mb-2 form-group">
+    <label class="form-label">Jenis Kelamin</label>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="gender1" value="male" [(ngModel)]="userModel.gender">
+      <label class="form-check-label" for="gender1">
+        Laki - Laki
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="gender" id="gender2" value="female" [(ngModel)]="userModel.gender">
+      <label class="form-check-label" for="gender2">
+        Perempuan
+      </label>
+    </div>
+  </div>
+
+
+  <div class="col-12 mb-2 form-group">
+    <label for="email" class="form-label">Email</label>
+    <input type="email" id="email" class="form-control" name="email" [(ngModel)]="userModel.email">
+  </div>
+
+  <div class="col-12 col-sm-3 mb-2 form-group">
+    <label for="dob" class="form-label">Tanggal Lahir</label>
+    <input type="date" id="dob" class="form-control" name="dob" [(ngModel)]="userModel.dob">
+  </div>
+
+  <div class="mt-4 d-flex align-items-end flex-column">
+    <ng-container *ngIf="isLoading; else showAddUser">
+      <button class="btn btn-primary btn-styling" type="button" disabled>
+        <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+        Loading...
+      </button>
+    </ng-container>
+
+    <ng-template #showAddUser>
+      <button type="submit" class="btn btn-primary btn-styling">Tambah User</button>
+    </ng-template>
+  </div>
+</form>
