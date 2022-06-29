@@ -7,8 +7,8 @@ import {TemplateDrivenComponent} from './template-driven/template-driven.compone
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'home'},
   {path: 'home', component: HomeComponent},
-  {path: 'template-driven', component: TemplateDrivenComponent},
-  {path: 'reactive', component: ReactiveComponent}
+  {path: 'template-driven', loadChildren: () => import('./template-driven/template-driven.module').then(m => m.TemplateDrivenModule)},
+  {path: 'reactive', loadChildren: () => import('./reactive-form/reactive-form.module').then(m => m.ReactiveFormModule)},
 ];
 
 @NgModule({
